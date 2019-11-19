@@ -1,0 +1,1071 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.CPP</ToolchainName>
+    <ProjectGuid>d581ae8a-44ff-48b1-8790-62143d9199d0</ProjectGuid>
+    <avrdevice>ATSAML21G18B</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>StaticLibrary</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>lib$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.a</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <Name>ArduinoCore</Name>
+    <ArduinoIdeDir>C:\tools\Arduino</ArduinoIdeDir>
+    <ArduinoProjectType>Core</ArduinoProjectType>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <AssemblyName>ArduinoCore</AssemblyName>
+    <RootNamespace>ArduinoCore</RootNamespace>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.40.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.samice</avrtool>
+    <avrtoolserialnumber>260104226</avrtoolserialnumber>
+    <avrdeviceexpectedsignature>0x10810214</avrdeviceexpectedsignature>
+    <avrtoolinterface>SWD</avrtoolinterface>
+    <com_atmel_avrdbg_tool_atmelice>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>0</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.atmelice</ToolType>
+      <ToolNumber>J41800044706</ToolNumber>
+      <ToolName>Atmel-ICE</ToolName>
+    </com_atmel_avrdbg_tool_atmelice>
+    <avrtoolinterfaceclock>4000000</avrtoolinterfaceclock>
+    <com_atmel_avrdbg_tool_samice>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>4000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.samice</ToolType>
+      <ToolNumber>260104226</ToolNumber>
+      <ToolName>J-Link</ToolName>
+    </com_atmel_avrdbg_tool_samice>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+            <Value>F_CPU=48000000L</Value>
+            <Value>ARDUINO=10809</Value>
+            <Value>ARDUINO_SAMD_ZERO</Value>
+            <Value>ARDUINO_ARCH_SAMD</Value>
+            <Value>USB_VID=0x16D0</Value>
+            <Value>USB_PID=0x0557</Value>
+            <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
+            <Value>USBCON</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>..\include</Value>
+            <Value>..\include\libraries\ssni_coap_server</Value>
+            <Value>..\include\libraries\dht_sensor_library</Value>
+            <Value>..\include\libraries\adafruit_unified_sensor</Value>
+            <Value>..\include\libraries\RTCZero</Value>
+            <Value>..\include\core</Value>
+            <Value>..\include\core\avr</Value>
+            <Value>..\include\core\USB</Value>
+            <Value>..\include\variants</Value>
+            <Value>..\include\core\saml21</Value>
+            <Value>..\include\core\saml21\include</Value>
+            <Value>..\include\core\saml21\include\component</Value>
+            <Value>..\include\core\saml21\include\instance</Value>
+            <Value>..\include\core\saml21\include\pio</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>..\include\libraries\LiquidCrystal_I2C-master</Value>
+            <Value>..\include\libraries\Wire</Value>
+            <Value>..\include\libraries\Wire\utility</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcc.compiler.optimization.OtherFlags>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
+        <armgcc.compiler.optimization.EnableLongCalls>False</armgcc.compiler.optimization.EnableLongCalls>
+        <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+        <armgcc.compiler.warnings.InhibitAllWarnings>True</armgcc.compiler.warnings.InhibitAllWarnings>
+        <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu11 --param max-inline-insns-single=500 -nostdlib</armgcc.compiler.miscellaneous.OtherFlags>
+        <armgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+            <Value>F_CPU=48000000L</Value>
+            <Value>ARDUINO=10809</Value>
+            <Value>ARDUINO_SAMD_ZERO</Value>
+            <Value>ARDUINO_ARCH_SAMD</Value>
+            <Value>USB_VID=0x16D0</Value>
+            <Value>USB_PID=0x0557</Value>
+            <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
+            <Value>USBCON</Value>
+          </ListValues>
+        </armgcccpp.compiler.symbols.DefSymbols>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>..\include</Value>
+            <Value>..\include\libraries\ssni_coap_server</Value>
+            <Value>..\include\libraries\dht_sensor_library</Value>
+            <Value>..\include\libraries\adafruit_unified_sensor</Value>
+            <Value>..\include\libraries\RTCZero</Value>
+            <Value>..\include\core</Value>
+            <Value>..\include\core\avr</Value>
+            <Value>..\include\core\USB</Value>
+            <Value>..\include\variants</Value>
+            <Value>..\include\core\saml21</Value>
+            <Value>..\include\core\saml21\include</Value>
+            <Value>..\include\core\saml21\include\component</Value>
+            <Value>..\include\core\saml21\include\instance</Value>
+            <Value>..\include\core\saml21\include\pio</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>..\include\libraries\LiquidCrystal_I2C-master</Value>
+            <Value>..\include\libraries\Wire</Value>
+            <Value>..\include\libraries\Wire\utility</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
+        <armgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcccpp.compiler.optimization.OtherFlags>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>
+        <armgcccpp.compiler.optimization.EnableLongCalls>False</armgcccpp.compiler.optimization.EnableLongCalls>
+        <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+        <armgcccpp.compiler.warnings.InhibitAllWarnings>True</armgcccpp.compiler.warnings.InhibitAllWarnings>
+        <armgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11 --param max-inline-insns-single=500 -nostdlib</armgcccpp.compiler.miscellaneous.OtherFlags>
+        <armgcccpp.linker.general.UseNewlibNano>True</armgcccpp.linker.general.UseNewlibNano>
+        <armgcccpp.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcccpp.linker.general.AdditionalSpecs>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Wl,--cref -Os -Wl,--check-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align</armgcccpp.linker.miscellaneous.LinkerFlags>
+        <armgcccpp.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.2.120\saml21b\include</Value>
+          </ListValues>
+        </armgcccpp.assembler.general.IncludePaths>
+        <armgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.assembler.debugging.DebugLevel>
+        <armgcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.2.120\saml21b\include</Value>
+          </ListValues>
+        </armgcccpp.preprocessingassembler.general.IncludePaths>
+      </ArmGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=48000000L</Value>
+      <Value>ARDUINO=10809</Value>
+      <Value>ARDUINO_SAMD_ZERO</Value>
+      <Value>ARDUINO_ARCH_SAMD</Value>
+      <Value>USB_VID=0x16D0</Value>
+      <Value>USB_PID=0x0557</Value>
+      <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
+      <Value>USBCON</Value>
+      <Value>ARM_MATH_CM0PLUS</Value>
+      <Value>SAML21</Value>
+      <Value>__SAML21G18B__</Value>
+      <Value>CLOCKCONFIG_32768HZ_CRYSTAL</Value>
+      <Value>FLOAT_BOTH_DOUBLES_ONLY</Value>
+      <Value>TIMER_732Hz</Value>
+      <Value>CONFIG_H_DISABLED</Value>
+      <Value>CDC_ONLY</Value>
+      <Value>THREE_UART</Value>
+      <Value>ONE_WIRE</Value>
+      <Value>ONE_SPI</Value>
+      <Value>__8KB_BOOTLOADER__</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>..\include</Value>
+      <Value>..\include\libraries\ssni_coap_server</Value>
+      <Value>..\include\libraries\dht_sensor_library</Value>
+      <Value>..\include\libraries\adafruit_unified_sensor</Value>
+      <Value>..\include\libraries\RTCZero</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\core\avr</Value>
+      <Value>..\include\core\USB</Value>
+      <Value>..\include\variants</Value>
+      <Value>..\include\core\sam121</Value>
+      <Value>..\include\core\sam121\include</Value>
+      <Value>..\include\core\sam121\include\component</Value>
+      <Value>..\include\core\sam121\include\instance</Value>
+      <Value>..\include\core\sam121\include\pio</Value>
+      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+      <Value>../include/libraries/Filters-master</Value>
+      <Value>../include/libraries/Wire</Value>
+      <Value>../include/libraries/LiquidCrystal_I2C-master</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+  <armgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcc.compiler.optimization.OtherFlags>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
+  <armgcc.compiler.optimization.EnableLongCalls>False</armgcc.compiler.optimization.EnableLongCalls>
+  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+  <armgcc.compiler.warnings.InhibitAllWarnings>True</armgcc.compiler.warnings.InhibitAllWarnings>
+  <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu11 --param max-inline-insns-single=500 -nostdlib</armgcc.compiler.miscellaneous.OtherFlags>
+  <armgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=48000000L</Value>
+      <Value>ARDUINO=10809</Value>
+      <Value>ARDUINO_SAMD_ZERO</Value>
+      <Value>ARDUINO_ARCH_SAMD</Value>
+      <Value>USB_VID=0x16D0</Value>
+      <Value>USB_PID=0x0557</Value>
+      <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
+      <Value>USBCON</Value>
+      <Value>ARM_MATH_CM0PLUS</Value>
+      <Value>SAML21</Value>
+      <Value>__SAML21G18B__</Value>
+      <Value>CLOCKCONFIG_32768HZ_CRYSTAL</Value>
+      <Value>FLOAT_BOTH_DOUBLES_ONLY</Value>
+      <Value>TIMER_732Hz</Value>
+      <Value>CONFIG_H_DISABLED</Value>
+      <Value>THREE_UART</Value>
+      <Value>CDC_ONLY</Value>
+      <Value>ONE_WIRE</Value>
+      <Value>ONE_SPI</Value>
+      <Value>__8KB_BOOTLOADER__</Value>
+    </ListValues>
+  </armgcccpp.compiler.symbols.DefSymbols>
+  <armgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>..\include</Value>
+      <Value>..\include\libraries\ssni_coap_server</Value>
+      <Value>..\include\libraries\dht_sensor_library</Value>
+      <Value>..\include\libraries\adafruit_unified_sensor</Value>
+      <Value>..\include\libraries\RTCZero</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\core\avr</Value>
+      <Value>..\include\core\USB</Value>
+      <Value>..\include\variants</Value>
+      <Value>..\include\core\saml21</Value>
+      <Value>..\include\core\saml21\include</Value>
+      <Value>..\include\core\saml21\include\component</Value>
+      <Value>..\include\core\saml21\include\instance</Value>
+      <Value>..\include\core\saml21\include\pio</Value>
+      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+      <Value>../include/libraries/Filters-master</Value>
+      <Value>../include/libraries/Wire</Value>
+      <Value>../include/libraries/LiquidCrystal_I2C-master</Value>
+    </ListValues>
+  </armgcccpp.compiler.directories.IncludePaths>
+  <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
+  <armgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcccpp.compiler.optimization.OtherFlags>
+  <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>
+  <armgcccpp.compiler.optimization.EnableLongCalls>False</armgcccpp.compiler.optimization.EnableLongCalls>
+  <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+  <armgcccpp.compiler.warnings.InhibitAllWarnings>True</armgcccpp.compiler.warnings.InhibitAllWarnings>
+  <armgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11 --param max-inline-insns-single=500 -nostdlib</armgcccpp.compiler.miscellaneous.OtherFlags>
+  <armgcccpp.linker.general.UseNewlibNano>True</armgcccpp.linker.general.UseNewlibNano>
+  <armgcccpp.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcccpp.linker.general.AdditionalSpecs>
+  <armgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </armgcccpp.linker.libraries.Libraries>
+  <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+  <armgcccpp.linker.memorysettings.ExternalRAM />
+  <armgcccpp.linker.miscellaneous.LinkerFlags>-Wl,--cref -Os -Wl,--check-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align</armgcccpp.linker.miscellaneous.LinkerFlags>
+  <armgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.2.120\saml21b\include</Value>
+    </ListValues>
+  </armgcccpp.assembler.general.IncludePaths>
+  <armgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.assembler.debugging.DebugLevel>
+  <armgcccpp.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.3.304\saml21a\include</Value>
+    </ListValues>
+  </armgcccpp.preprocessingassembler.general.IncludePaths>
+  <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+</ArmGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="include\core\Arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\dtoa_conv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\dtostrf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\ftoa_engine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\ftostrf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\interrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\io.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\pgmspace.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\binary.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Client.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\delay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\HardwareSerial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\IPAddress.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\itoa.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Print.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Printable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\pulse.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Reset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\RingBuffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\ac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\dac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\dmac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\dsu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\eic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\evsys.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\gclk.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\mtb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\nvmctrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\pac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\pm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\port.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\sercom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\tc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\tcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\usb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\component\wdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\ac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\dac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\dmac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\dsu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\eic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\evsys.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\gclk.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\mtb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\nvmctrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\pm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\port.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\sercom0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\sercom1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\sercom2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\sercom3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\sercom4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\sercom5.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\tc3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\tc4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\tcc0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\tcc1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\tcc2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\usb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\instance\wdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\pio\saml21e15b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\pio\saml21e16b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\pio\saml21e17b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\pio\saml21e18b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\pio\saml21g16b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\pio\saml21g17b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\pio\saml21g18b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\pio\saml21j16b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\pio\saml21j17b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\pio\saml21j18b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21e15b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21e16b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21e17b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21e18b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21g16b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21g17b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21g18b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21j16b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21j17b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\saml21j18b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\include\system_saml21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\saml21\sam.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\SERCOM.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Server.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Stream.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Tone.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Udp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\PluggableUSB.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\samd21_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\SAMD21_USBDevice.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\USBAPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\USBCore.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\USBDesc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\USB_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WCharacter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WInterrupts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_analog.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_constants.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_digital.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_shift.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WMath.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WString.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WVariant.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\EchoSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_unified_sensor\Adafruit_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\dht_sensor_library\DHT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\dht_sensor_library\DHT_U.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Filters-master\FilterDerivative.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Filters-master\FilterOnePole.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Filters-master\Filters.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Filters-master\FilterTwoPole.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Filters-master\FloatDefine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Filters-master\RunningStatistics.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\LiquidCrystal_I2C-master\LiquidCrystal_I2C.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\RTCZero\RTCZero.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\arduino_pins.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\arduino_time.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\bufutil.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\cbor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\coapextif.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\coapmsg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\coapobserve.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\coappdu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\coapsensorobs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\coapsensoruri.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\coaputil.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\coap_rbt_msg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\coap_rsp_msg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\coap_server.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\crc_xmodem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\errors.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\exp_coap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\hbuf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\hdlc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\hdlcs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\includes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\log.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\sapi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\sapiprivate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ssni_coap_server\sapi_error.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Wire\Wire.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\sam.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\TempSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\us3_mshield.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\variant.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\abi.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\avr\dtoa_prf.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\avr\dtostrf.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\avr\ftoa_engine.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\avr\ftostrf.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\cortex_handlers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\delay.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\hooks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\IPAddress.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\itoa.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\new.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\PreprocessingAssembly\pulse_asm.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Print.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\pulse.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\pulse_asm.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Reset.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\RingBuffer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\SERCOM.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\startup.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Stream.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Tone.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Uart.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USB\CDC.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USB\PluggableUSB.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USB\samd21_host.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USB\USBCore.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WInterrupts.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_analog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_digital.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_private.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_shift.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WMath.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WString.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\dht_sensor_library\DHT.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\dht_sensor_library\DHT_U.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Filters-master\FilterDerivative.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Filters-master\FilterOnePole.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Filters-master\FilterTwoPole.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Filters-master\RunningStatistics.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\LiquidCrystal_I2C-master\LiquidCrystal_I2C.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\RTCZero\RTCZero.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\arduino_time.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\bufutil.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\cbor_encode.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\coapmsg.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\coapobserve.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\coapopt.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\coapsensorobs.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\coapsensoruri.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\coap_rbt_msg.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\coap_rsp_msg.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\coap_server.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\crc_xmodem.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\hbuf.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\hdlc.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\hdlcs.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\log.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ssni_coap_server\sapi.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Wire\Wire.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\variants\variant.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="include\" />
+    <Folder Include="include\core\" />
+    <Folder Include="include\core\avr\" />
+    <Folder Include="include\core\saml21\" />
+    <Folder Include="include\core\saml21\include\" />
+    <Folder Include="include\core\saml21\include\component\" />
+    <Folder Include="include\core\saml21\include\instance\" />
+    <Folder Include="include\core\saml21\include\pio\" />
+    <Folder Include="include\core\USB\" />
+    <Folder Include="include\libraries\" />
+    <Folder Include="include\libraries\adafruit_unified_sensor\" />
+    <Folder Include="include\libraries\dht_sensor_library\" />
+    <Folder Include="include\libraries\Filters-master\" />
+    <Folder Include="include\libraries\Filters-master\" />
+    <Folder Include="include\libraries\Filters-master\" />
+    <Folder Include="include\libraries\LiquidCrystal_I2C-master\" />
+    <Folder Include="include\libraries\RTCZero\" />
+    <Folder Include="include\libraries\ssni_coap_server\" />
+    <Folder Include="include\libraries\Wire\" />
+    <Folder Include="include\variants\" />
+    <Folder Include="src\" />
+    <Folder Include="src\core\" />
+    <Folder Include="src\core\avr\" />
+    <Folder Include="src\core\PreprocessingAssembly\" />
+    <Folder Include="src\core\USB\" />
+    <Folder Include="src\libraries\" />
+    <Folder Include="src\libraries\dht_sensor_library\" />
+    <Folder Include="src\libraries\Filters-master\" />
+    <Folder Include="src\libraries\LiquidCrystal_I2C-master\" />
+    <Folder Include="src\libraries\RTCZero\" />
+    <Folder Include="src\libraries\ssni_coap_server\" />
+    <Folder Include="src\libraries\Wire\" />
+    <Folder Include="src\variants\" />
+    <Folder Include="src\variants\openocd_scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\libraries\Filters-master\keywords.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAMC21G15A.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAMC21G16A.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAMC21G17A.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAMC21G18A.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAMD21G15A.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAMD21G16A.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAMD21G17A.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAMD21G18A.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAMD51G18A.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAMD51G19A.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAML21G16B.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAML21G17B.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\variants\openocd_scripts\SAML21G18B.cfg">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
