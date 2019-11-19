@@ -33,6 +33,14 @@ Networks, Inc.
 #include "errors.h"
 #include "arduino_pins.h"
 
+//#include<SPIMemory.h>
+//#include <ArduinoUniqueID.h>
+#define Serial SERIAL_PORT_USBVIRTUAL
+#define BAUD_RATE 115200
+#define BLOCKSIZE 256
+#define debug;
+//SPIFlash flash;
+
 
 // Used to tell CoAP Server to use the SAPI dispatcher and handler
 uint8_t	is_sapi = 1;
@@ -95,9 +103,28 @@ void sapi_initialize(char *url_classifier)
 // Idle loop run.
 //
 //////////////////////////////////////////////////////////////////////////
+char input;
+
+bool initBoot = true;
 void sapi_run()
 {
+	if(initBoot){ 
+		Serial.println("Enter any key to go to BootProgram"); 
+	
+		for (int i = 0; i < 5;i++){
+			if(Serial.available()){
+				input = Serial.read();
+				Serial.println(input);
+			
+			}
+		delay(1000); 
+		}
+		initBoot = false;
+	
+	} 
+	else {
 	coap_s_run();
+	}
 }
 
 

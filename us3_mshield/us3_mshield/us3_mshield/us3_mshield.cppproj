@@ -246,6 +246,7 @@
       <Value>../../ArduinoCore/include/libraries/Filters-master</Value>
       <Value>../../ArduinoCore/include/libraries/Wire</Value>
       <Value>../../ArduinoCore/include/libraries/LiquidCrystal_I2C-master</Value>
+      <Value>../../ArduinoCore/include/libraries/SPIMemory-master/src</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
@@ -301,6 +302,7 @@
       <Value>../../ArduinoCore/include/libraries/Filters-master</Value>
       <Value>../../ArduinoCore/include/libraries/Wire</Value>
       <Value>../../ArduinoCore/include/libraries/LiquidCrystal_I2C-master</Value>
+      <Value>../../ArduinoCore/include/libraries/SPIMemory-master/src</Value>
     </ListValues>
   </armgcccpp.compiler.directories.IncludePaths>
   <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
