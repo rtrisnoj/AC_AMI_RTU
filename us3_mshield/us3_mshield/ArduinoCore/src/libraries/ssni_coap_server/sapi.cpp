@@ -186,28 +186,47 @@ void GoHere(){
 //
 //////////////////////////////////////////////////////////////////////////
 char input;
-
 bool initBoot = true;
+bool init1 = true;
+bool init2 = false;
+int l = 0;
 void sapi_run()
 {
 	if(initBoot){ 
-		Serial.println("Enter any key to go to BootProgram"); 
+		if(init1){
+		Serial.println("Enter any key to go to BootProgram before it counts to 10"); 
 		flash.begin(); 
-		//wait for 10 seconds
-		for (int i = 0; i < 10;i++){
-			if(Serial.available()){
-				input = Serial.read();
-				Serial.println(input);
-				GoHere();
-			}
-		delay(1000); 
+		init1 = false;
 		}
-		initBoot = false;
-	
+		
+		//wait for 10 seconds
+		if (!init2){
+			for (l = 1; l < 11; l++){
+				if(Serial.available()){
+					input = Serial.read();
+					Serial.println(input);
+					init2 = true;
+					break;
+				
+				}
+				Serial.print(l);
+				delay(1000);
+				if(l == 10){
+					initBoot = false;
+					break;
+					
+				}
+			}
+		} 
+		else{
+		GoHere();
+		}
+		//initBoot = false;
+		
 	} 
 	else { 
 		//Coap Code
-	//coap_s_run();
+	coap_s_run();
 	}
 }
 
