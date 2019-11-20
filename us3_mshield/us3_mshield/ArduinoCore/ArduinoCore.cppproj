@@ -112,6 +112,9 @@
       <Value>..\include\libraries\Wire</Value>
       <Value>..\include\libraries\Wire\utility</Value>
       <Value>..\include\libraries\SPIMemory-master\src</Value>
+      <Value>..\include\libraries\ArduinoUniqueID\src</Value>
+      <Value>..\include\libraries\SPI</Value>
+      <Value>..\include\libraries\SPIMemory\src</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
@@ -156,6 +159,9 @@
       <Value>..\include\libraries\Wire</Value>
       <Value>..\include\libraries\Wire\utility</Value>
       <Value>..\include\libraries\SPIMemory-master\src</Value>
+      <Value>..\include\libraries\ArduinoUniqueID\src</Value>
+      <Value>..\include\libraries\SPI</Value>
+      <Value>..\include\libraries\SPIMemory\src</Value>
     </ListValues>
   </armgcccpp.compiler.directories.IncludePaths>
   <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
@@ -222,6 +228,7 @@
       <Value>ONE_WIRE</Value>
       <Value>ONE_SPI</Value>
       <Value>__8KB_BOOTLOADER__</Value>
+      <Value>SAMD_ZERO</Value>
     </ListValues>
   </armgcc.compiler.symbols.DefSymbols>
   <armgcc.compiler.directories.IncludePaths>
@@ -244,7 +251,9 @@
       <Value>../include/libraries/Filters-master</Value>
       <Value>../include/libraries/Wire</Value>
       <Value>../include/libraries/LiquidCrystal_I2C-master</Value>
-      <Value>..\include\libraries\SPIMemory-master\src</Value>
+      <Value>../include/libraries/ArduinoUniqueID/src</Value>
+      <Value>../include/libraries/SPI</Value>
+      <Value>../include/libraries/SPIMemory/src</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
@@ -278,6 +287,7 @@
       <Value>ONE_WIRE</Value>
       <Value>ONE_SPI</Value>
       <Value>__8KB_BOOTLOADER__</Value>
+      <Value>SAMD_ZERO</Value>
     </ListValues>
   </armgcccpp.compiler.symbols.DefSymbols>
   <armgcccpp.compiler.directories.IncludePaths>
@@ -300,7 +310,9 @@
       <Value>../include/libraries/Filters-master</Value>
       <Value>../include/libraries/Wire</Value>
       <Value>../include/libraries/LiquidCrystal_I2C-master</Value>
-      <Value>..\include\libraries\SPIMemory-master\src</Value>
+      <Value>../include/libraries/ArduinoUniqueID/src</Value>
+      <Value>../include/libraries/SPI</Value>
+      <Value>../include/libraries/SPIMemory/src</Value>
     </ListValues>
   </armgcccpp.compiler.directories.IncludePaths>
   <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
@@ -678,6 +690,9 @@
     <Compile Include="include\libraries\adafruit_unified_sensor\Adafruit_Sensor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\libraries\ArduinoUniqueID\src\ArduinoUniqueID.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\libraries\dht_sensor_library\DHT.h">
       <SubType>compile</SubType>
     </Compile>
@@ -708,9 +723,6 @@
     <Compile Include="include\libraries\RTCZero\RTCZero.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="include\libraries\SPIMemory-master\src\defines.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="include\libraries\SPIMemory-master\src\diagnostics.h">
       <SubType>compile</SubType>
     </Compile>
@@ -727,6 +739,30 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\libraries\SPIMemory-master\src\SPIMemory.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SPIMemory\src\defines.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SPIMemory\src\diagnostics.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SPIMemory\src\DMASAM.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SPIMemory\src\DMASAMD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SPIMemory\src\SPIFlash.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SPIMemory\src\SPIFram.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SPIMemory\src\SPIMemory.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SPI\SPI.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\libraries\ssni_coap_server\arduino_pins.h">
@@ -930,6 +966,9 @@
     <Compile Include="src\core\WString.cpp">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\libraries\ArduinoUniqueID\src\ArduinoUniqueID.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\libraries\dht_sensor_library\DHT.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -952,6 +991,33 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\libraries\RTCZero\RTCZero.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPIMemory\src\diagnostics.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPIMemory\src\DMASAM.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPIMemory\src\SPIFlash.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPIMemory\src\SPIFlashIO.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPIMemory\src\SPIFlashSFDP.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPIMemory\src\SPIFram.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPIMemory\src\SPIFramIO.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPIMemory\src\SPIMemory.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPI\SPI.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\libraries\ssni_coap_server\arduino_time.cpp">
@@ -1024,6 +1090,8 @@
     <Folder Include="include\core\USB\" />
     <Folder Include="include\libraries\" />
     <Folder Include="include\libraries\adafruit_unified_sensor\" />
+    <Folder Include="include\libraries\ArduinoUniqueID\" />
+    <Folder Include="include\libraries\ArduinoUniqueID\src\" />
     <Folder Include="include\libraries\dht_sensor_library\" />
     <Folder Include="include\libraries\Filters-master\" />
     <Folder Include="include\libraries\Filters-master\" />
@@ -1032,6 +1100,9 @@
     <Folder Include="include\libraries\RTCZero\" />
     <Folder Include="include\libraries\SPIMemory-master\" />
     <Folder Include="include\libraries\SPIMemory-master\src\" />
+    <Folder Include="include\libraries\SPIMemory\" />
+    <Folder Include="include\libraries\SPIMemory\src\" />
+    <Folder Include="include\libraries\SPI\" />
     <Folder Include="include\libraries\ssni_coap_server\" />
     <Folder Include="include\libraries\Wire\" />
     <Folder Include="include\variants\" />
@@ -1041,6 +1112,8 @@
     <Folder Include="src\core\PreprocessingAssembly\" />
     <Folder Include="src\core\USB\" />
     <Folder Include="src\libraries\" />
+    <Folder Include="src\libraries\ArduinoUniqueID\" />
+    <Folder Include="src\libraries\ArduinoUniqueID\src\" />
     <Folder Include="src\libraries\dht_sensor_library\" />
     <Folder Include="src\libraries\Filters-master\" />
     <Folder Include="src\libraries\LiquidCrystal_I2C-master\" />
@@ -1050,9 +1123,11 @@
     <Folder Include="src\libraries\SPIMemory-master\docs\_build\" />
     <Folder Include="src\libraries\SPIMemory-master\docs\_build\html\" />
     <Folder Include="src\libraries\SPIMemory-master\docs\_build\html\_static\" />
-    <Folder Include="src\libraries\SPIMemory-master\docs\_build\html\_static\css\" />
     <Folder Include="src\libraries\SPIMemory-master\extras\" />
     <Folder Include="src\libraries\SPIMemory-master\src\" />
+    <Folder Include="src\libraries\SPIMemory\" />
+    <Folder Include="src\libraries\SPIMemory\src\" />
+    <Folder Include="src\libraries\SPI\" />
     <Folder Include="src\libraries\ssni_coap_server\" />
     <Folder Include="src\libraries\Wire\" />
     <Folder Include="src\variants\" />

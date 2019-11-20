@@ -33,13 +33,13 @@ Networks, Inc.
 #include "errors.h"
 #include "arduino_pins.h"
 
-//#include<SPIMemory.h>
-//#include <ArduinoUniqueID.h>
+#include<SPIMemory.h>
+#include <ArduinoUniqueID.h>
 #define Serial SERIAL_PORT_USBVIRTUAL
 #define BAUD_RATE 115200
 #define BLOCKSIZE 256
 #define debug;
-//SPIFlash flash;
+SPIFlash flash;
 
 
 // Used to tell CoAP Server to use the SAPI dispatcher and handler
@@ -100,6 +100,88 @@ void sapi_initialize(char *url_classifier)
 
 //////////////////////////////////////////////////////////////////////////
 //
+// SPI FLASH Functions
+//
+//////////////////////////////////////////////////////////////////////////
+bool eraseBlock(){
+	if (!flash.eraseBlock64K(1))
+	return false;
+	else
+	return true;
+}
+String readSerialStr() {
+	String str = "";
+	
+	//  Serial.println("Waiting...");
+	char inChar = 0;
+	inChar = Serial.read();
+	while (inChar != '.') {
+		if (inChar != 255)
+		str += inChar;
+		if (inChar == '$')
+		return "$";
+		if (inChar == '#')
+		return "#";
+		inChar = Serial.read();
+	}
+	str += inChar;
+	// Serial.println("end run");
+	str += '\0';
+	return str;
+}
+String getString(int addr){
+
+	String output = "";
+	uint8_t data_buffer[BLOCKSIZE];
+	flash.readByteArray(addr, &data_buffer[0], BLOCKSIZE);
+	for (int i = 2; i < BLOCKSIZE; i++)
+	{
+		if (data_buffer[i] == 255 )
+		return output;
+		output += (char)data_buffer[i];
+	}
+	return "No Data";
+	
+}
+String getID(){
+
+	String ID1 = "";
+	//  Serial.println(F("Initialising"));
+	//  UniqueIDdump(Serial);
+	for (size_t i = 0; i < UniqueIDsize; i++)
+	{
+		ID1 += String(UniqueID[i],HEX);
+		if (i%4==3 && i < (UniqueIDsize - 1))
+		{
+			ID1 += ("-");
+		}
+	}
+	ID1.toUpperCase();
+	return ID1;
+}
+
+void GoHere(){
+	// Serial.println("Entering Loop");
+	int addr = 1;
+	String str = readSerialStr();
+	if (str == "$")
+	Serial.println(getString(addr));
+	else if (str == "#")
+	Serial.println(getID());
+	else
+	{
+		eraseBlock();
+		if (flash.writeStr(addr, str)) {
+			Serial.println("complete");
+		}
+		else {
+			Serial.print("failed");
+		}
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////
+//
 // Idle loop run.
 //
 //////////////////////////////////////////////////////////////////////////
@@ -110,20 +192,22 @@ void sapi_run()
 {
 	if(initBoot){ 
 		Serial.println("Enter any key to go to BootProgram"); 
-	
-		for (int i = 0; i < 5;i++){
+		flash.begin(); 
+		//wait for 10 seconds
+		for (int i = 0; i < 10;i++){
 			if(Serial.available()){
 				input = Serial.read();
 				Serial.println(input);
-			
+				GoHere();
 			}
 		delay(1000); 
 		}
 		initBoot = false;
 	
 	} 
-	else {
-	coap_s_run();
+	else { 
+		//Coap Code
+	//coap_s_run();
 	}
 }
 

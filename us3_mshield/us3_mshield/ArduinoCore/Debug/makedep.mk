@@ -72,6 +72,8 @@ src\core\WMath.cpp
 
 src\core\WString.cpp
 
+src\libraries\ArduinoUniqueID\src\ArduinoUniqueID.cpp
+
 src\libraries\dht_sensor_library\DHT.cpp
 
 src\libraries\dht_sensor_library\DHT_U.cpp
@@ -87,6 +89,24 @@ src\libraries\Filters-master\RunningStatistics.cpp
 src\libraries\LiquidCrystal_I2C-master\LiquidCrystal_I2C.cpp
 
 src\libraries\RTCZero\RTCZero.cpp
+
+src\libraries\SPIMemory\src\diagnostics.cpp
+
+src\libraries\SPIMemory\src\DMASAM.cpp
+
+src\libraries\SPIMemory\src\SPIFlash.cpp
+
+src\libraries\SPIMemory\src\SPIFlashIO.cpp
+
+src\libraries\SPIMemory\src\SPIFlashSFDP.cpp
+
+src\libraries\SPIMemory\src\SPIFram.cpp
+
+src\libraries\SPIMemory\src\SPIFramIO.cpp
+
+src\libraries\SPIMemory\src\SPIMemory.cpp
+
+src\libraries\SPI\SPI.cpp
 
 src\libraries\ssni_coap_server\arduino_time.cpp
 

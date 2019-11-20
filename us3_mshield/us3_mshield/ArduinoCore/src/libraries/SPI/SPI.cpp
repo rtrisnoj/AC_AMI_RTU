@@ -26,7 +26,9 @@
 #define SPI_IMODE_EXTINT 1
 #define SPI_IMODE_GLOBAL 2
 
-SPIClass::SPIClass(SERCOM *p_sercom, uint8_t uc_pinMISO, uint8_t uc_pinSCK, uint8_t uc_pinMOSI, SercomSpiTXPad PadTx, SercomRXPad PadRx) : settings(SPISettings(0, MSBFIRST, SPI_MODE0))
+const SPISettings DEFAULT_SPI_SETTINGS = SPISettings();
+
+SPIClass::SPIClass(SERCOM *p_sercom, uint8_t uc_pinMISO, uint8_t uc_pinSCK, uint8_t uc_pinMOSI, SercomSpiTXPad PadTx, SercomRXPad PadRx)
 {
   initialized = false;
   assert(p_sercom != NULL);
@@ -47,9 +49,9 @@ void SPIClass::begin()
   init();
 
   // PIO init
-  pinPeripheral(_uc_pinMiso, g_APinDescription[_uc_pinMiso].ulPinType);
-  pinPeripheral(_uc_pinSCK, g_APinDescription[_uc_pinSCK].ulPinType);
-  pinPeripheral(_uc_pinMosi, g_APinDescription[_uc_pinMosi].ulPinType);
+  pinPeripheral(_uc_pinMiso, PIO_SERCOM);
+  pinPeripheral(_uc_pinSCK, PIO_SERCOM);
+  pinPeripheral(_uc_pinMosi, PIO_SERCOM);
 
   config(DEFAULT_SPI_SETTINGS);
 }
@@ -66,15 +68,12 @@ void SPIClass::init()
 
 void SPIClass::config(SPISettings settings)
 {
-  if (this->settings != settings) {
-    this->settings = settings;
-    _p_sercom->disableSPI();
+  _p_sercom->disableSPI();
 
-    _p_sercom->initSPI(_padTx, _padRx, SPI_CHAR_SIZE_8_BITS, settings.bitOrder);
-    _p_sercom->initSPIClock(settings.dataMode, settings.clockFreq);
+  _p_sercom->initSPI(_padTx, _padRx, SPI_CHAR_SIZE_8_BITS, settings.bitOrder);
+  _p_sercom->initSPIClock(settings.dataMode, settings.clockFreq);
 
-    _p_sercom->enableSPI();
-  }
+  _p_sercom->enableSPI();
 }
 
 void SPIClass::end()
@@ -106,7 +105,7 @@ void SPIClass::usingInterrupt(int interruptNumber)
   else
   {
     interruptMode |= SPI_IMODE_EXTINT;
-    interruptMask |= (1 << g_APinDescription[interruptNumber].ulExtInt);
+    interruptMask |= (1 << interruptNumber);
   }
 
   if (irestore)
@@ -124,7 +123,7 @@ void SPIClass::notUsingInterrupt(int interruptNumber)
   uint8_t irestore = interruptsStatus();
   noInterrupts();
 
-  interruptMask &= ~(1 << g_APinDescription[interruptNumber].ulExtInt);
+  interruptMask &= ~(1 << interruptNumber);
 
   if (interruptMask == 0)
     interruptMode = SPI_IMODE_NONE;
@@ -255,9 +254,9 @@ void SPIClass::detachInterrupt() {
    *   - SercomRXPad
    */
   #ifndef PERIPH_SPI
-    #define PERIPH_SPI           sercom4
-    #define PAD_SPI_TX           SPI_PAD_2_SCK_3
-    #define PAD_SPI_RX           SERCOM_RX_PAD_0
+    #define PERIPH_SPI           sercom5                 //sercom4
+    #define PAD_SPI_TX           SPI_PAD_2_SCK_3        //SPI_PAD_2_SCK_3
+    #define PAD_SPI_RX           SERCOM_RX_PAD_1        //SERCOM_RX_PAD_0
   #endif // PERIPH_SPI
   SPIClass SPI (&PERIPH_SPI,  PIN_SPI_MISO,  PIN_SPI_SCK,  PIN_SPI_MOSI,  PAD_SPI_TX,  PAD_SPI_RX);
 #endif
@@ -276,4 +275,9 @@ void SPIClass::detachInterrupt() {
 #if SPI_INTERFACES_COUNT > 5
   SPIClass SPI5(&PERIPH_SPI5, PIN_SPI5_MISO, PIN_SPI5_SCK, PIN_SPI5_MOSI, PAD_SPI5_TX, PAD_SPI5_RX);
 #endif
-
+#if SPI_INTERFACES_COUNT > 6
+  SPIClass SPI6(&PERIPH_SPI6, PIN_SPI6_MISO, PIN_SPI6_SCK, PIN_SPI6_MOSI, PAD_SPI6_TX, PAD_SPI6_RX);
+#endif
+#if SPI_INTERFACES_COUNT > 7
+  SPIClass SPI7(&PERIPH_SPI7, PIN_SPI7_MISO, PIN_SPI7_SCK, PIN_SPI7_MOSI, PAD_SPI7_TX, PAD_SPI7_RX);
+#endif

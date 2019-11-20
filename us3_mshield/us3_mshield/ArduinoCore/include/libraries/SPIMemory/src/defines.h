@@ -223,7 +223,7 @@
 #if defined (ARDUINO_ARCH_ESP8266)
 #define CS 15
 #elif defined (ARDUINO_ARCH_SAMD)
-#define CS 13 //ryan default 10 // change to 
+#define CS 10
 /*********************************************************************************************
 // Declaration of the Default Chip select pin name for RTL8195A
 // Note: This has been shifted due to a bug identified in the HAL layer SPI driver
