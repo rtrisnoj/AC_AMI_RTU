@@ -33,13 +33,7 @@ Networks, Inc.
 #include "errors.h"
 #include "arduino_pins.h"
 
-#include<SPIMemory.h>
-#include <ArduinoUniqueID.h>
-#define Serial SERIAL_PORT_USBVIRTUAL
-#define BAUD_RATE 115200
-#define BLOCKSIZE 256
-#define debug;
-SPIFlash flash;
+
 
 
 // Used to tell CoAP Server to use the SAPI dispatcher and handler
@@ -103,6 +97,14 @@ void sapi_initialize(char *url_classifier)
 // SPI FLASH Functions
 //
 //////////////////////////////////////////////////////////////////////////
+#include<SPIMemory.h>
+#include <ArduinoUniqueID.h>
+#define Serial SERIAL_PORT_USBVIRTUAL
+#define BLOCKSIZE 256
+#define debug;
+SPIFlash flash;
+
+
 bool eraseBlock(){
 	if (!flash.eraseBlock64K(1))
 	return false;

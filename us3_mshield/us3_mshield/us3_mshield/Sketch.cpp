@@ -95,6 +95,8 @@ static uint8_t echo_sensor_id;
 //
 void setup()
 {
+	Serial.begin(115200);
+	
 	sapi_error_t rcode;
 	
 	// Initialize Sensor API
