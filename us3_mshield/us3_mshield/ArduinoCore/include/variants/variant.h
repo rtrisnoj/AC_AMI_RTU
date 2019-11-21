@@ -205,7 +205,7 @@ Date: 08/19/2019
 #define PIN_Y					(31u)		//RXLED/SWDIO	(PA31)
 #define PIN_A5					(34ul)		//PB02
 #define FLASH_MISO				(35u)		//PB03	
-
+#define PIN_D1					(36ul)
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -231,7 +231,7 @@ static const uint8_t D4		=	PIN_D4;
 static const uint8_t D2		=	PIN_D2;
 
 static const uint8_t A5		=	PIN_A5;
-
+static const uint8_t D1		=	PIN_D1;
 ////////////////////////////////////////////////
 /*
  * Analog pins
@@ -345,20 +345,21 @@ static const uint8_t ATN = PIN_ATN;
 #define SPI_INTERFACES_COUNT 1
 #endif
 
-#define PIN_SPI_MISO         (FLASH_MISO)		// pb03		//35u
-#define PIN_SPI_MOSI         (FLASH_MOSI)		//pb22		//32u
-#define PIN_SPI_SCK          (FLASH_SCK)		//pb23		//33u
-#define PIN_SPI_SS           (FLASH_CS)			//PA13		//13u
+static const uint8_t SS   = FLASH_CS ;        // The SERCOM SS PAD is available on this pin but HW SS isn't used. Set here only for reference. //RYAN
+static const uint8_t MOSI = FLASH_MOSI ;	//RYAN
+static const uint8_t MISO = FLASH_MISO ;	//RYAN
+static const uint8_t SCK  = FLASH_SCK ;		//RYAN
 
-#define PERIPH_SPI           sercom5					//RYAN
-#define PAD_SPI_TX           SPI_PAD_2_SCK_3			//RYAN
-#define PAD_SPI_RX           SERCOM_RX_PAD_1			//RYAN
+#define PIN_SPI_MISO         MISO
+#define PIN_SPI_MOSI         MOSI
+#define PIN_SPI_SCK          SCK
+#define PIN_SPI_SS           SS
 
-static const uint8_t SS   = PIN_SPI_SS ;        // The SERCOM SS PAD is available on this pin but HW SS isn't used. Set here only for reference. //RYAN
-static const uint8_t MOSI = PIN_SPI_MOSI ;	//RYAN
-static const uint8_t MISO = PIN_SPI_MISO ;	//RYAN
-static const uint8_t SCK  = PIN_SPI_SCK ;		//RYAN
+#define PERIPH_SPI           sercom5
+#define PAD_SPI_TX           SPI_PAD_2_SCK_3
+#define PAD_SPI_RX           SERCOM_RX_PAD_1
 
+/*
 #if (SAMD51)
 #define PIN_SPI1_MISO         (21u)
 #define PIN_SPI1_MOSI         (23u)
@@ -380,7 +381,7 @@ static const uint8_t SS1   = PIN_SPI1_SS ;	// The SERCOM SS PAD is available on 
 static const uint8_t MOSI1 = PIN_SPI1_MOSI ;
 static const uint8_t MISO1 = PIN_SPI1_MISO ;
 static const uint8_t SCK1  = PIN_SPI1_SCK ;
-
+*/
 
 /*
  * Wire Interfaces
@@ -390,6 +391,7 @@ static const uint8_t SCK1  = PIN_SPI1_SCK ;
 #define PIN_WIRE_SDA         (PIN_SDA)			//(22u)			//RYAN
 #define PIN_WIRE_SCL         (PIN_SCL)			//(23u)			//RYAN
 #define PERIPH_WIRE          sercom5
+
 #if (SAMD51)
   #define WIRE_STOP_DETECTED_HANDLER      SERCOM5_0_Handler
   #define WIRE_ADDRESS_MATCH_HANDLER      SERCOM5_1_Handler

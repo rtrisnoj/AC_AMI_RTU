@@ -105,11 +105,17 @@ void sapi_initialize(char *url_classifier)
 SPIFlash flash;
 
 
-bool eraseBlock(){
-	if (!flash.eraseBlock64K(1))
-	return false;
+bool eraseBlock (){
+	if (! flash . eraseBlock64K (1))
+	{
+		Serial . println ( "Erase Failed" );
+		return false ;
+	}
 	else
-	return true;
+	{
+		Serial . println ( "Erase Succeed" );
+		return true ;
+	}
 }
 String readSerialStr() {
 	String str = "";

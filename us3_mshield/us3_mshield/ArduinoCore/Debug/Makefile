@@ -76,7 +76,6 @@ SUBDIRS :=  \
 ../src/libraries/SPIMemory-master/docs/ \
 ../src/libraries/SPIMemory-master/docs/_build/ \
 ../src/libraries/SPIMemory-master/docs/_build/html/ \
-../src/libraries/SPIMemory-master/docs/_build/html/_static/ \
 ../src/libraries/SPIMemory-master/extras/ \
 ../src/libraries/SPIMemory-master/src/ \
 ../src/libraries/SPIMemory/ \

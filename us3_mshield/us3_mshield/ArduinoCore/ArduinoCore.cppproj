@@ -73,281 +73,281 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <ArmGccCpp>
-  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
-  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
-  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
-  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
-  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
-  <armgcc.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>NDEBUG</Value>
-      <Value>F_CPU=48000000L</Value>
-      <Value>ARDUINO=10809</Value>
-      <Value>ARDUINO_SAMD_ZERO</Value>
-      <Value>ARDUINO_ARCH_SAMD</Value>
-      <Value>USB_VID=0x16D0</Value>
-      <Value>USB_PID=0x0557</Value>
-      <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
-      <Value>USBCON</Value>
-    </ListValues>
-  </armgcc.compiler.symbols.DefSymbols>
-  <armgcc.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>..\include</Value>
-      <Value>..\include\libraries\ssni_coap_server</Value>
-      <Value>..\include\libraries\dht_sensor_library</Value>
-      <Value>..\include\libraries\adafruit_unified_sensor</Value>
-      <Value>..\include\libraries\RTCZero</Value>
-      <Value>..\include\core</Value>
-      <Value>..\include\core\avr</Value>
-      <Value>..\include\core\USB</Value>
-      <Value>..\include\variants</Value>
-      <Value>..\include\core\saml21</Value>
-      <Value>..\include\core\saml21\include</Value>
-      <Value>..\include\core\saml21\include\component</Value>
-      <Value>..\include\core\saml21\include\instance</Value>
-      <Value>..\include\core\saml21\include\pio</Value>
-      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
-      <Value>..\include\libraries\LiquidCrystal_I2C-master</Value>
-      <Value>..\include\libraries\Wire</Value>
-      <Value>..\include\libraries\Wire\utility</Value>
-      <Value>..\include\libraries\SPIMemory-master\src</Value>
-      <Value>..\include\libraries\ArduinoUniqueID\src</Value>
-      <Value>..\include\libraries\SPI</Value>
-      <Value>..\include\libraries\SPIMemory\src</Value>
-    </ListValues>
-  </armgcc.compiler.directories.IncludePaths>
-  <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
-  <armgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcc.compiler.optimization.OtherFlags>
-  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
-  <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
-  <armgcc.compiler.optimization.EnableLongCalls>False</armgcc.compiler.optimization.EnableLongCalls>
-  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
-  <armgcc.compiler.warnings.InhibitAllWarnings>True</armgcc.compiler.warnings.InhibitAllWarnings>
-  <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu11 --param max-inline-insns-single=500 -nostdlib</armgcc.compiler.miscellaneous.OtherFlags>
-  <armgcccpp.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>NDEBUG</Value>
-      <Value>F_CPU=48000000L</Value>
-      <Value>ARDUINO=10809</Value>
-      <Value>ARDUINO_SAMD_ZERO</Value>
-      <Value>ARDUINO_ARCH_SAMD</Value>
-      <Value>USB_VID=0x16D0</Value>
-      <Value>USB_PID=0x0557</Value>
-      <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
-      <Value>USBCON</Value>
-    </ListValues>
-  </armgcccpp.compiler.symbols.DefSymbols>
-  <armgcccpp.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>..\include</Value>
-      <Value>..\include\libraries\ssni_coap_server</Value>
-      <Value>..\include\libraries\dht_sensor_library</Value>
-      <Value>..\include\libraries\adafruit_unified_sensor</Value>
-      <Value>..\include\libraries\RTCZero</Value>
-      <Value>..\include\core</Value>
-      <Value>..\include\core\avr</Value>
-      <Value>..\include\core\USB</Value>
-      <Value>..\include\variants</Value>
-      <Value>..\include\core\saml21</Value>
-      <Value>..\include\core\saml21\include</Value>
-      <Value>..\include\core\saml21\include\component</Value>
-      <Value>..\include\core\saml21\include\instance</Value>
-      <Value>..\include\core\saml21\include\pio</Value>
-      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
-      <Value>..\include\libraries\LiquidCrystal_I2C-master</Value>
-      <Value>..\include\libraries\Wire</Value>
-      <Value>..\include\libraries\Wire\utility</Value>
-      <Value>..\include\libraries\SPIMemory-master\src</Value>
-      <Value>..\include\libraries\ArduinoUniqueID\src</Value>
-      <Value>..\include\libraries\SPI</Value>
-      <Value>..\include\libraries\SPIMemory\src</Value>
-    </ListValues>
-  </armgcccpp.compiler.directories.IncludePaths>
-  <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
-  <armgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcccpp.compiler.optimization.OtherFlags>
-  <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
-  <armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>
-  <armgcccpp.compiler.optimization.EnableLongCalls>False</armgcccpp.compiler.optimization.EnableLongCalls>
-  <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
-  <armgcccpp.compiler.warnings.InhibitAllWarnings>True</armgcccpp.compiler.warnings.InhibitAllWarnings>
-  <armgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11 --param max-inline-insns-single=500 -nostdlib</armgcccpp.compiler.miscellaneous.OtherFlags>
-  <armgcccpp.linker.general.UseNewlibNano>True</armgcccpp.linker.general.UseNewlibNano>
-  <armgcccpp.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcccpp.linker.general.AdditionalSpecs>
-  <armgcccpp.linker.libraries.Libraries>
-    <ListValues>
-      <Value>libm</Value>
-    </ListValues>
-  </armgcccpp.linker.libraries.Libraries>
-  <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
-  <armgcccpp.linker.miscellaneous.LinkerFlags>-Wl,--cref -Os -Wl,--check-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align</armgcccpp.linker.miscellaneous.LinkerFlags>
-  <armgcccpp.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
-      <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.2.120\saml21b\include</Value>
-    </ListValues>
-  </armgcccpp.assembler.general.IncludePaths>
-  <armgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.assembler.debugging.DebugLevel>
-  <armgcccpp.preprocessingassembler.general.IncludePaths>
-    <ListValues>
-      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
-      <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.2.120\saml21b\include</Value>
-    </ListValues>
-  </armgcccpp.preprocessingassembler.general.IncludePaths>
-</ArmGccCpp>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+            <Value>F_CPU=48000000L</Value>
+            <Value>ARDUINO=10809</Value>
+            <Value>ARDUINO_SAMD_ZERO</Value>
+            <Value>ARDUINO_ARCH_SAMD</Value>
+            <Value>USB_VID=0x16D0</Value>
+            <Value>USB_PID=0x0557</Value>
+            <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
+            <Value>USBCON</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>..\include</Value>
+            <Value>..\include\libraries\ssni_coap_server</Value>
+            <Value>..\include\libraries\dht_sensor_library</Value>
+            <Value>..\include\libraries\adafruit_unified_sensor</Value>
+            <Value>..\include\libraries\RTCZero</Value>
+            <Value>..\include\core</Value>
+            <Value>..\include\core\avr</Value>
+            <Value>..\include\core\USB</Value>
+            <Value>..\include\variants</Value>
+            <Value>..\include\core\saml21</Value>
+            <Value>..\include\core\saml21\include</Value>
+            <Value>..\include\core\saml21\include\component</Value>
+            <Value>..\include\core\saml21\include\instance</Value>
+            <Value>..\include\core\saml21\include\pio</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>..\include\libraries\LiquidCrystal_I2C-master</Value>
+            <Value>..\include\libraries\Wire</Value>
+            <Value>..\include\libraries\Wire\utility</Value>
+            <Value>..\include\libraries\SPIMemory-master\src</Value>
+            <Value>..\include\libraries\ArduinoUniqueID\src</Value>
+            <Value>..\include\libraries\SPI</Value>
+            <Value>..\include\libraries\SPIMemory\src</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcc.compiler.optimization.OtherFlags>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
+        <armgcc.compiler.optimization.EnableLongCalls>False</armgcc.compiler.optimization.EnableLongCalls>
+        <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+        <armgcc.compiler.warnings.InhibitAllWarnings>True</armgcc.compiler.warnings.InhibitAllWarnings>
+        <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu11 --param max-inline-insns-single=500 -nostdlib</armgcc.compiler.miscellaneous.OtherFlags>
+        <armgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+            <Value>F_CPU=48000000L</Value>
+            <Value>ARDUINO=10809</Value>
+            <Value>ARDUINO_SAMD_ZERO</Value>
+            <Value>ARDUINO_ARCH_SAMD</Value>
+            <Value>USB_VID=0x16D0</Value>
+            <Value>USB_PID=0x0557</Value>
+            <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
+            <Value>USBCON</Value>
+          </ListValues>
+        </armgcccpp.compiler.symbols.DefSymbols>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>..\include</Value>
+            <Value>..\include\libraries\ssni_coap_server</Value>
+            <Value>..\include\libraries\dht_sensor_library</Value>
+            <Value>..\include\libraries\adafruit_unified_sensor</Value>
+            <Value>..\include\libraries\RTCZero</Value>
+            <Value>..\include\core</Value>
+            <Value>..\include\core\avr</Value>
+            <Value>..\include\core\USB</Value>
+            <Value>..\include\variants</Value>
+            <Value>..\include\core\saml21</Value>
+            <Value>..\include\core\saml21\include</Value>
+            <Value>..\include\core\saml21\include\component</Value>
+            <Value>..\include\core\saml21\include\instance</Value>
+            <Value>..\include\core\saml21\include\pio</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>..\include\libraries\LiquidCrystal_I2C-master</Value>
+            <Value>..\include\libraries\Wire</Value>
+            <Value>..\include\libraries\Wire\utility</Value>
+            <Value>..\include\libraries\SPIMemory-master\src</Value>
+            <Value>..\include\libraries\ArduinoUniqueID\src</Value>
+            <Value>..\include\libraries\SPI</Value>
+            <Value>..\include\libraries\SPIMemory\src</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
+        <armgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcccpp.compiler.optimization.OtherFlags>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>
+        <armgcccpp.compiler.optimization.EnableLongCalls>False</armgcccpp.compiler.optimization.EnableLongCalls>
+        <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+        <armgcccpp.compiler.warnings.InhibitAllWarnings>True</armgcccpp.compiler.warnings.InhibitAllWarnings>
+        <armgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11 --param max-inline-insns-single=500 -nostdlib</armgcccpp.compiler.miscellaneous.OtherFlags>
+        <armgcccpp.linker.general.UseNewlibNano>True</armgcccpp.linker.general.UseNewlibNano>
+        <armgcccpp.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcccpp.linker.general.AdditionalSpecs>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Wl,--cref -Os -Wl,--check-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align</armgcccpp.linker.miscellaneous.LinkerFlags>
+        <armgcccpp.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.2.120\saml21b\include</Value>
+          </ListValues>
+        </armgcccpp.assembler.general.IncludePaths>
+        <armgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.assembler.debugging.DebugLevel>
+        <armgcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.2.120\saml21b\include</Value>
+          </ListValues>
+        </armgcccpp.preprocessingassembler.general.IncludePaths>
+      </ArmGccCpp>
     </ToolchainSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <ArmGccCpp>
-  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
-  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
-  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
-  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
-  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
-  <armgcc.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>DEBUG</Value>
-      <Value>F_CPU=48000000L</Value>
-      <Value>ARDUINO=10809</Value>
-      <Value>ARDUINO_SAMD_ZERO</Value>
-      <Value>ARDUINO_ARCH_SAMD</Value>
-      <Value>USB_VID=0x16D0</Value>
-      <Value>USB_PID=0x0557</Value>
-      <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
-      <Value>USBCON</Value>
-      <Value>ARM_MATH_CM0PLUS</Value>
-      <Value>SAML21</Value>
-      <Value>__SAML21G18B__</Value>
-      <Value>CLOCKCONFIG_32768HZ_CRYSTAL</Value>
-      <Value>FLOAT_BOTH_DOUBLES_ONLY</Value>
-      <Value>TIMER_732Hz</Value>
-      <Value>CONFIG_H_DISABLED</Value>
-      <Value>CDC_ONLY</Value>
-      <Value>THREE_UART</Value>
-      <Value>ONE_WIRE</Value>
-      <Value>ONE_SPI</Value>
-      <Value>__8KB_BOOTLOADER__</Value>
-      <Value>SAMD_ZERO</Value>
-    </ListValues>
-  </armgcc.compiler.symbols.DefSymbols>
-  <armgcc.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>..\include</Value>
-      <Value>..\include\libraries\ssni_coap_server</Value>
-      <Value>..\include\libraries\dht_sensor_library</Value>
-      <Value>..\include\libraries\adafruit_unified_sensor</Value>
-      <Value>..\include\libraries\RTCZero</Value>
-      <Value>..\include\core</Value>
-      <Value>..\include\core\avr</Value>
-      <Value>..\include\core\USB</Value>
-      <Value>..\include\variants</Value>
-      <Value>..\include\core\sam121</Value>
-      <Value>..\include\core\sam121\include</Value>
-      <Value>..\include\core\sam121\include\component</Value>
-      <Value>..\include\core\sam121\include\instance</Value>
-      <Value>..\include\core\sam121\include\pio</Value>
-      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
-      <Value>../include/libraries/Filters-master</Value>
-      <Value>../include/libraries/Wire</Value>
-      <Value>../include/libraries/LiquidCrystal_I2C-master</Value>
-      <Value>../include/libraries/ArduinoUniqueID/src</Value>
-      <Value>../include/libraries/SPI</Value>
-      <Value>../include/libraries/SPIMemory/src</Value>
-    </ListValues>
-  </armgcc.compiler.directories.IncludePaths>
-  <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
-  <armgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcc.compiler.optimization.OtherFlags>
-  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
-  <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
-  <armgcc.compiler.optimization.EnableLongCalls>False</armgcc.compiler.optimization.EnableLongCalls>
-  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
-  <armgcc.compiler.warnings.InhibitAllWarnings>True</armgcc.compiler.warnings.InhibitAllWarnings>
-  <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu11 --param max-inline-insns-single=500 -nostdlib</armgcc.compiler.miscellaneous.OtherFlags>
-  <armgcccpp.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>DEBUG</Value>
-      <Value>F_CPU=48000000L</Value>
-      <Value>ARDUINO=10809</Value>
-      <Value>ARDUINO_SAMD_ZERO</Value>
-      <Value>ARDUINO_ARCH_SAMD</Value>
-      <Value>USB_VID=0x16D0</Value>
-      <Value>USB_PID=0x0557</Value>
-      <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
-      <Value>USBCON</Value>
-      <Value>ARM_MATH_CM0PLUS</Value>
-      <Value>SAML21</Value>
-      <Value>__SAML21G18B__</Value>
-      <Value>CLOCKCONFIG_32768HZ_CRYSTAL</Value>
-      <Value>FLOAT_BOTH_DOUBLES_ONLY</Value>
-      <Value>TIMER_732Hz</Value>
-      <Value>CONFIG_H_DISABLED</Value>
-      <Value>THREE_UART</Value>
-      <Value>CDC_ONLY</Value>
-      <Value>ONE_WIRE</Value>
-      <Value>ONE_SPI</Value>
-      <Value>__8KB_BOOTLOADER__</Value>
-      <Value>SAMD_ZERO</Value>
-    </ListValues>
-  </armgcccpp.compiler.symbols.DefSymbols>
-  <armgcccpp.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>..\include</Value>
-      <Value>..\include\libraries\ssni_coap_server</Value>
-      <Value>..\include\libraries\dht_sensor_library</Value>
-      <Value>..\include\libraries\adafruit_unified_sensor</Value>
-      <Value>..\include\libraries\RTCZero</Value>
-      <Value>..\include\core</Value>
-      <Value>..\include\core\avr</Value>
-      <Value>..\include\core\USB</Value>
-      <Value>..\include\variants</Value>
-      <Value>..\include\core\saml21</Value>
-      <Value>..\include\core\saml21\include</Value>
-      <Value>..\include\core\saml21\include\component</Value>
-      <Value>..\include\core\saml21\include\instance</Value>
-      <Value>..\include\core\saml21\include\pio</Value>
-      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
-      <Value>../include/libraries/Filters-master</Value>
-      <Value>../include/libraries/Wire</Value>
-      <Value>../include/libraries/LiquidCrystal_I2C-master</Value>
-      <Value>../include/libraries/ArduinoUniqueID/src</Value>
-      <Value>../include/libraries/SPI</Value>
-      <Value>../include/libraries/SPIMemory/src</Value>
-    </ListValues>
-  </armgcccpp.compiler.directories.IncludePaths>
-  <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
-  <armgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcccpp.compiler.optimization.OtherFlags>
-  <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
-  <armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>
-  <armgcccpp.compiler.optimization.EnableLongCalls>False</armgcccpp.compiler.optimization.EnableLongCalls>
-  <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
-  <armgcccpp.compiler.warnings.InhibitAllWarnings>True</armgcccpp.compiler.warnings.InhibitAllWarnings>
-  <armgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11 --param max-inline-insns-single=500 -nostdlib</armgcccpp.compiler.miscellaneous.OtherFlags>
-  <armgcccpp.linker.general.UseNewlibNano>True</armgcccpp.linker.general.UseNewlibNano>
-  <armgcccpp.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcccpp.linker.general.AdditionalSpecs>
-  <armgcccpp.linker.libraries.Libraries>
-    <ListValues>
-      <Value>libm</Value>
-    </ListValues>
-  </armgcccpp.linker.libraries.Libraries>
-  <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
-  <armgcccpp.linker.memorysettings.ExternalRAM />
-  <armgcccpp.linker.miscellaneous.LinkerFlags>-Wl,--cref -Os -Wl,--check-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align</armgcccpp.linker.miscellaneous.LinkerFlags>
-  <armgcccpp.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
-      <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.2.120\saml21b\include</Value>
-    </ListValues>
-  </armgcccpp.assembler.general.IncludePaths>
-  <armgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.assembler.debugging.DebugLevel>
-  <armgcccpp.preprocessingassembler.general.IncludePaths>
-    <ListValues>
-      <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
-      <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.3.304\saml21a\include</Value>
-    </ListValues>
-  </armgcccpp.preprocessingassembler.general.IncludePaths>
-  <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
-</ArmGccCpp>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+            <Value>F_CPU=48000000L</Value>
+            <Value>ARDUINO=10809</Value>
+            <Value>ARDUINO_SAMD_ZERO</Value>
+            <Value>ARDUINO_ARCH_SAMD</Value>
+            <Value>USB_VID=0x16D0</Value>
+            <Value>USB_PID=0x0557</Value>
+            <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
+            <Value>USBCON</Value>
+            <Value>ARM_MATH_CM0PLUS</Value>
+            <Value>SAML21</Value>
+            <Value>__SAML21G18B__</Value>
+            <Value>CLOCKCONFIG_32768HZ_CRYSTAL</Value>
+            <Value>FLOAT_BOTH_DOUBLES_ONLY</Value>
+            <Value>TIMER_732Hz</Value>
+            <Value>CONFIG_H_DISABLED</Value>
+            <Value>CDC_ONLY</Value>
+            <Value>THREE_UART</Value>
+            <Value>ONE_WIRE</Value>
+            <Value>ONE_SPI</Value>
+            <Value>__8KB_BOOTLOADER__</Value>
+            <Value>SAMD_ZERO</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>..\include</Value>
+            <Value>..\include\libraries\ssni_coap_server</Value>
+            <Value>..\include\libraries\dht_sensor_library</Value>
+            <Value>..\include\libraries\adafruit_unified_sensor</Value>
+            <Value>..\include\libraries\RTCZero</Value>
+            <Value>..\include\core</Value>
+            <Value>..\include\core\avr</Value>
+            <Value>..\include\core\USB</Value>
+            <Value>..\include\variants</Value>
+            <Value>..\include\core\sam121</Value>
+            <Value>..\include\core\sam121\include</Value>
+            <Value>..\include\core\sam121\include\component</Value>
+            <Value>..\include\core\sam121\include\instance</Value>
+            <Value>..\include\core\sam121\include\pio</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>../include/libraries/Filters-master</Value>
+            <Value>../include/libraries/Wire</Value>
+            <Value>../include/libraries/LiquidCrystal_I2C-master</Value>
+            <Value>../include/libraries/ArduinoUniqueID/src</Value>
+            <Value>../include/libraries/SPI</Value>
+            <Value>../include/libraries/SPIMemory/src</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcc.compiler.optimization.OtherFlags>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
+        <armgcc.compiler.optimization.EnableLongCalls>False</armgcc.compiler.optimization.EnableLongCalls>
+        <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+        <armgcc.compiler.warnings.InhibitAllWarnings>True</armgcc.compiler.warnings.InhibitAllWarnings>
+        <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu11 --param max-inline-insns-single=500 -nostdlib</armgcc.compiler.miscellaneous.OtherFlags>
+        <armgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+            <Value>F_CPU=48000000L</Value>
+            <Value>ARDUINO=10809</Value>
+            <Value>ARDUINO_SAMD_ZERO</Value>
+            <Value>ARDUINO_ARCH_SAMD</Value>
+            <Value>USB_VID=0x16D0</Value>
+            <Value>USB_PID=0x0557</Value>
+            <Value>USB_MANUFACTURER="\"MattairTech LLC\""</Value>
+            <Value>USBCON</Value>
+            <Value>ARM_MATH_CM0PLUS</Value>
+            <Value>SAML21</Value>
+            <Value>__SAML21G18B__</Value>
+            <Value>CLOCKCONFIG_32768HZ_CRYSTAL</Value>
+            <Value>FLOAT_BOTH_DOUBLES_ONLY</Value>
+            <Value>TIMER_732Hz</Value>
+            <Value>CONFIG_H_DISABLED</Value>
+            <Value>THREE_UART</Value>
+            <Value>CDC_ONLY</Value>
+            <Value>ONE_WIRE</Value>
+            <Value>ONE_SPI</Value>
+            <Value>__8KB_BOOTLOADER__</Value>
+            <Value>SAMD_ZERO</Value>
+          </ListValues>
+        </armgcccpp.compiler.symbols.DefSymbols>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>..\include</Value>
+            <Value>..\include\libraries\ssni_coap_server</Value>
+            <Value>..\include\libraries\dht_sensor_library</Value>
+            <Value>..\include\libraries\adafruit_unified_sensor</Value>
+            <Value>..\include\libraries\RTCZero</Value>
+            <Value>..\include\core</Value>
+            <Value>..\include\core\avr</Value>
+            <Value>..\include\core\USB</Value>
+            <Value>..\include\variants</Value>
+            <Value>..\include\core\saml21</Value>
+            <Value>..\include\core\saml21\include</Value>
+            <Value>..\include\core\saml21\include\component</Value>
+            <Value>..\include\core\saml21\include\instance</Value>
+            <Value>..\include\core\saml21\include\pio</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>../include/libraries/Filters-master</Value>
+            <Value>../include/libraries/Wire</Value>
+            <Value>../include/libraries/LiquidCrystal_I2C-master</Value>
+            <Value>../include/libraries/ArduinoUniqueID/src</Value>
+            <Value>../include/libraries/SPI</Value>
+            <Value>../include/libraries/SPIMemory/src</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
+        <armgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcccpp.compiler.optimization.OtherFlags>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>
+        <armgcccpp.compiler.optimization.EnableLongCalls>False</armgcccpp.compiler.optimization.EnableLongCalls>
+        <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+        <armgcccpp.compiler.warnings.InhibitAllWarnings>True</armgcccpp.compiler.warnings.InhibitAllWarnings>
+        <armgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11 --param max-inline-insns-single=500 -nostdlib</armgcccpp.compiler.miscellaneous.OtherFlags>
+        <armgcccpp.linker.general.UseNewlibNano>True</armgcccpp.linker.general.UseNewlibNano>
+        <armgcccpp.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcccpp.linker.general.AdditionalSpecs>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.memorysettings.ExternalRAM />
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Wl,--cref -Os -Wl,--check-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align</armgcccpp.linker.miscellaneous.LinkerFlags>
+        <armgcccpp.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.2.120\saml21b\include</Value>
+          </ListValues>
+        </armgcccpp.assembler.general.IncludePaths>
+        <armgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.assembler.debugging.DebugLevel>
+        <armgcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\cmsis\5.0.1\CMSIS\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAML21_DFP\1.3.304\saml21a\include</Value>
+          </ListValues>
+        </armgcccpp.preprocessingassembler.general.IncludePaths>
+        <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+      </ArmGccCpp>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
@@ -723,9 +723,6 @@
     <Compile Include="include\libraries\RTCZero\RTCZero.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="include\libraries\SPIMemory-master\src\diagnostics.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="include\libraries\SPIMemory-master\src\DMASAM.h">
       <SubType>compile</SubType>
     </Compile>
@@ -850,9 +847,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\us3_mshield.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\variants\config.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\variants\pins_arduino.h">
@@ -1122,7 +1116,6 @@
     <Folder Include="src\libraries\SPIMemory-master\docs\" />
     <Folder Include="src\libraries\SPIMemory-master\docs\_build\" />
     <Folder Include="src\libraries\SPIMemory-master\docs\_build\html\" />
-    <Folder Include="src\libraries\SPIMemory-master\docs\_build\html\_static\" />
     <Folder Include="src\libraries\SPIMemory-master\extras\" />
     <Folder Include="src\libraries\SPIMemory-master\src\" />
     <Folder Include="src\libraries\SPIMemory\" />
