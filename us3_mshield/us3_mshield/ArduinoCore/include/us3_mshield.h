@@ -30,7 +30,6 @@ Networks, Inc.
 #ifndef _SAPI_MSHIELD_H_
 #define _SAPI_MSHIELD_H_
 
-
 /*
  * @brief Arduino setup function.
  *

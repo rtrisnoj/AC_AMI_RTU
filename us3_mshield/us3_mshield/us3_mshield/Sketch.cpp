@@ -1,8 +1,4 @@
-﻿/*Begining of Auto generated code by Atmel studio */
-#include <Arduino.h>
-
-/*End of auto generated code by Atmel studio */
-
+﻿
 /*
 
   Copyright (c) Silver Spring Networks, Inc.
@@ -84,26 +80,24 @@
 //Beginning of Auto generated function prototypes by Atmel Studio
 //End of Auto generated function prototypes by Atmel Studio
 
-
-
-
 static uint8_t temp_sensor_id;
 static uint8_t echo_sensor_id;
-
 //
 //  Arduino setup function.
 //
+
+int interval = 0;
 void setup()
 {
 	Serial.begin(115200);
 	
 	sapi_error_t rcode;
-	
 	// Initialize Sensor API
 	sapi_initialize(NULL);
-	
+	loadGlobalVariables();
+	interval = ParamSendInterval();
 	// Register temp sensor
-	temp_sensor_id = sapi_register_sensor(TEMP_SENSOR_TYPE, temp_init_sensor, temp_read_sensor, temp_read_cfg, temp_write_cfg, 1, 60);
+	temp_sensor_id = sapi_register_sensor(TEMP_SENSOR_TYPE, temp_init_sensor, temp_read_sensor, temp_read_cfg, temp_write_cfg, 1, interval);
 	
 	// Initialize temp sensor
 	rcode = sapi_init_sensor(temp_sensor_id);
@@ -126,5 +120,4 @@ void loop()
 {
 	// Call SAPI run to do the heavy lifting
 	sapi_run();
-
 }

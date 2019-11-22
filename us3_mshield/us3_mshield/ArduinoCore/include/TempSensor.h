@@ -37,7 +37,6 @@ Networks, Inc.
 #include "arduino_time.h"
 #include "log.h"
 
-
 //////////////////////////////////////////////////////////////////////////
 //
 // Sensor Type. Think of this as the resource name of the sensor.

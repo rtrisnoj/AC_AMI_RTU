@@ -33,7 +33,14 @@ Networks, Inc.
 #include "errors.h"
 #include "arduino_pins.h"
 
-
+#include <SPIMemory.h>
+#include <ArduinoUniqueID.h>
+#define Serial SERIAL_PORT_USBVIRTUAL
+#define BLOCKSIZE 256
+#define debug;
+SPIFlash flash;
+int sendInterval = 0;
+int sampleRate = 0;
 
 
 // Used to tell CoAP Server to use the SAPI dispatcher and handler
@@ -60,6 +67,7 @@ void sapi_initialize(char *url_classifier)
 	is_sapi = 1;
 	sensor_info_index = 0;
 	
+
 	// Use classifier if provided.
 	if (url_classifier == NULL)
 	{
@@ -92,28 +100,25 @@ void sapi_initialize(char *url_classifier)
 }
 
 
+
+
 //////////////////////////////////////////////////////////////////////////
 //
 // SPI FLASH Functions
 //
 //////////////////////////////////////////////////////////////////////////
-#include<SPIMemory.h>
-#include <ArduinoUniqueID.h>
-#define Serial SERIAL_PORT_USBVIRTUAL
-#define BLOCKSIZE 256
-#define debug;
-SPIFlash flash;
+
 
 
 bool eraseBlock (){
 	if (! flash . eraseBlock64K (1))
 	{
-		Serial . println ( "Erase Failed" );
+		Serial.println("Erase Failed");
 		return false ;
 	}
 	else
 	{
-		Serial . println ( "Erase Succeed" );
+		Serial.println("Erase Succeed");
 		return true ;
 	}
 }
@@ -172,10 +177,12 @@ void GoHere(){
 	// Serial.println("Entering Loop");
 	int addr = 1;
 	String str = readSerialStr();
-	if (str == "$")
+	if (str == "$"){
 	Serial.println(getString(addr));
-	else if (str == "#")
+	}
+	else if (str == "#"){
 	Serial.println(getID());
+	}
 	else
 	{
 		eraseBlock();
@@ -235,6 +242,71 @@ void sapi_run()
 	else { 
 		//Coap Code
 	coap_s_run();
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////
+//
+// Load all the parameters from SPI FLASH
+//
+//////////////////////////////////////////////////////////////////////////
+int ParamSendInterval(){
+	return sendInterval;
+}
+
+bool setValue(String parameter, String value)
+{
+	if (parameter == "SendInterval")
+	{
+		Serial.println("Send Interval: " + value);
+		//      sendInterval = (int)value;
+		sendInterval = value.toInt();
+	}
+	else if (parameter == "SampleRate")
+	{
+		Serial.println("Sample Rate: " + value);
+		//         sampleRate = (int)value;
+		sampleRate = value.toInt();
+	}
+}
+
+void loadGlobalVariables() {
+	flash.begin(); 
+	
+	String parameter = "";
+	String value = "";
+	String strVars = getString(1);
+	
+	String inChar = "";
+	int i = 0;
+	bool readingParam = true;
+	//   Serial.println(strVars);
+	while (inChar != ".")
+	{
+		inChar = strVars[i++];
+		if (inChar != ":" & inChar != ",")
+		{
+			if (readingParam)
+			parameter += inChar;
+			else
+			value += inChar;
+		}
+		else
+		{
+			if (inChar == ":")
+			{
+				readingParam = false;
+			}
+			else
+			{
+				//Serial.println(parameter + ":" + value);
+				setValue(parameter,value);
+				parameter = "";
+				value = "";
+				readingParam = true;
+			}
+			
+		}
 	}
 }
 

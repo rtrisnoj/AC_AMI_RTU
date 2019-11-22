@@ -114,8 +114,14 @@ void sapi_initialize(char *url_classifier);
  * are pushed up.
  */
 void sapi_run();
-
-
+bool eraseBlock();
+String readSerialStr();
+String getString(int addr);
+String getID();
+void GoHere();
+bool setValue(String parameter, String value);
+void loadGlobalVariables();
+int ParamSendInterval();
 //////////////////////////////////////////////////////////////////////////
 //
 // SAPI sensor functions
