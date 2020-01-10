@@ -82,11 +82,13 @@
 
 static uint8_t temp_sensor_id;
 static uint8_t echo_sensor_id;
+time_t  epoch      = get_rtc_epoch();
 //
 //  Arduino setup function.
 //
 
-int interval = 0;
+int sendInterval1 = 0;
+int sampleRate1 = 0;
 void setup()
 {
 	Serial.begin(115200);
@@ -94,10 +96,16 @@ void setup()
 	sapi_error_t rcode;
 	// Initialize Sensor API
 	sapi_initialize(NULL);
+	
+	//Initialize Variables for the Software
 	loadGlobalVariables();
-	interval = ParamSendInterval();
+	sendInterval1 = ParamSendInterval();
+	sampleRate1 = ParamSampleRate();
+	
+	//logging array 
+	
 	// Register temp sensor
-	temp_sensor_id = sapi_register_sensor(TEMP_SENSOR_TYPE, temp_init_sensor, temp_read_sensor, temp_read_cfg, temp_write_cfg, 1, interval);
+	temp_sensor_id = sapi_register_sensor(TEMP_SENSOR_TYPE, temp_init_sensor, temp_read_sensor, temp_read_cfg, temp_write_cfg, 1, sendInterval1);
 	
 	// Initialize temp sensor
 	rcode = sapi_init_sensor(temp_sensor_id);
@@ -121,3 +129,4 @@ void loop()
 	// Call SAPI run to do the heavy lifting
 	sapi_run();
 }
+

@@ -174,6 +174,8 @@ TempSensor.d TempSensor.o: .././TempSensor.cpp \
  ..\\..\ArduinoCore\include\libraries\ssni_coap_server/errors.h \
  ..\\..\ArduinoCore\include\libraries\RTCZero/RTCZero.h \
  ..\\..\ArduinoCore\include\libraries\ssni_coap_server/log.h \
+ ..\\..\ArduinoCore\include\libraries\ssni_coap_server/sapi.h \
+ ..\\..\ArduinoCore\include\libraries\ssni_coap_server/sapi_error.h \
  ../../ArduinoCore/include/libraries/Filters-master/Filters.h \
  ../../ArduinoCore/include/libraries/Filters-master/FilterOnePole.h \
  ../../ArduinoCore/include/libraries/Filters-master/FilterTwoPole.h \
@@ -531,6 +533,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 ..\\..\ArduinoCore\include\libraries\RTCZero/RTCZero.h:
 
 ..\\..\ArduinoCore\include\libraries\ssni_coap_server/log.h:
+
+..\\..\ArduinoCore\include\libraries\ssni_coap_server/sapi.h:
+
+..\\..\ArduinoCore\include\libraries\ssni_coap_server/sapi_error.h:
 
 ../../ArduinoCore/include/libraries/Filters-master/Filters.h:
 

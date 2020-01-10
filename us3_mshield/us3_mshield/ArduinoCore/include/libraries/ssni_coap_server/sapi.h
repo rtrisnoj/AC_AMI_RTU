@@ -122,6 +122,7 @@ void GoHere();
 bool setValue(String parameter, String value);
 void loadGlobalVariables();
 int ParamSendInterval();
+int ParamSampleRate();
 //////////////////////////////////////////////////////////////////////////
 //
 // SAPI sensor functions

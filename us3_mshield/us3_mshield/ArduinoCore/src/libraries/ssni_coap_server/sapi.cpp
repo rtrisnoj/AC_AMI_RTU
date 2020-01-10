@@ -254,6 +254,10 @@ int ParamSendInterval(){
 	return sendInterval;
 }
 
+int ParamSampleRate(){
+	return sampleRate;
+}
+
 bool setValue(String parameter, String value)
 {
 	if (parameter == "SendInterval")

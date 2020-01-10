@@ -27,6 +27,7 @@ Networks, Inc.
 
 */
 #include "TempSensor.h"
+#include "sapi.h"
 #include <Filters.h> 
 
 
@@ -37,8 +38,11 @@ DHT_Unified dht(A1, DHT_TYPE);
 // Sensor Context. Contains the unit of measure and alert state.
 static temp_ctx_t context;
 
-
-
+//RT initialize sendInterval and sampleRate from SPI FLASH
+int sendInterval2 = 0;
+int sampleRate2 = 0;
+int i = 0;
+int j = 0;
 //////////////////////////////////////////////////////////////////////////
 //
 // Initialization functions. Callback functions. Payload building functions.
@@ -90,16 +94,17 @@ sapi_error_t temp_read_sensor(char *payload, uint8_t *len)
 {
 	float reading = 0.0;
     sapi_error_t rc;
-	char buffer[64];
+	char buffer[128];
 
 	// Read temp sensor, already in network order
     rc = read_dht11(&reading);
+	// Assemble the Payload
+	
 	if (rc != SAPI_ERR_OK)
 	{
+		//rc = temp_build_payload(buffer, &reading);
 		return rc;
 	}
-	
-	// Assemble the Payload
 	rc = temp_build_payload(buffer, &reading);
 	strcpy(payload, buffer);
 	*len = strlen(buffer);
@@ -274,7 +279,9 @@ float calculateVoltage(){
 //////////////////////////////////////////////////////////////////////////
 sapi_error_t temp_build_payload(char *buf, float *reading)
 {
-	char 		payload[64];
+	sapi_error_t rt = SAPI_ERR_FAIL;
+	char 		payload[128];
+	char		temp_payload[128];
 	char		reading_buf[32];
 	char        datatype30[] = "30,";
 	char		datatype31[] = "31,"; //current datatype is 31
@@ -310,48 +317,25 @@ sapi_error_t temp_build_payload(char *buf, float *reading)
 	strcat(payload, unit_buf);
 	
 	/*
-	// Check if we have a sensor reading
-	if (reading != NULL)
-	{
-		// Create string containing reading and add it to the buffer
-		sprintf(reading_buf, ",%.2f", *reading);
-		strcat(payload, reading_buf);
+	if (j == sendInterval2 / sampleRate2 - 1){
+		strcat(temp_payload, "2");
+		strcpy(buf, temp_payload);
+		strcpy(temp_payload, "");
+		j = 0;
+		//rt = SAPI_ERR_OK;
+		
 	}
-	
-	// Add scale
-	strcpy( unit_buf, ",F" );
-	if ( context.scalecfg == CELSIUS_SCALE )
-	{
-		strcpy( unit_buf, ",C" );
+	else {
+		strcat(temp_payload, "1");
+		j = j + 1;
+		//strcpy(buf, payload);
+		//rt = SAPI_ERR_FAIL;
 	}
-	
-	// Add scale to payload
-	strcat(payload, unit_buf);
 	*/
-	
-	/*
-	int valueA0 = analogRead(A0);
-	int valueA2 = analogRead(A2);
-	int valueA4 = analogRead(A4);
-	char data0[] = "1";
-	char data2[] = "2";
-	char data4[] = "3";
-
-	epoch = get_rtc_epoch();
-	sprintf(payload, "%d,", epoch);
-	
-	strcat(payload,"A0_5V,");
-	sprintf(data0, "%d,", valueA0);
-	strcat(payload, data0);
-	strcat(payload, ";A2_12V,");
-	sprintf(data2, "%d,", valueA2);
-	strcat(payload, data2);
-	strcat(payload, ";A4,");
-	sprintf(data4, "%d", valueA4);
-	strcat(payload, data4);
-*/
+	//strcpy(payload,"111112222233333444445555566666777778888899999");
+	//strcpy(temp_payload, payload);
+	//strcpy(buf, "111112222233333444445555566666777778888899999");
 	strcpy(buf, payload);
-	
 	dlog(LOG_DEBUG, "Temp Payload: %s", payload);
 	return SAPI_ERR_OK;
 }
@@ -400,6 +384,19 @@ sapi_error_t read_dht11(float *reading)
 	
 	// Assign output
 	*reading = re;
+	
+	//RT SampleRate Function Here
+	/*sendInterval2 = ParamSendInterval();
+	sampleRate2 = ParamSampleRate();
+	if (i == sendInterval2 / sampleRate2 - 1){
+		i = 0;
+		rc = SAPI_ERR_OK;
+	}
+	else {
+		i = i + 1;
+		rc = SAPI_ERR_FAIL;
+	}
+	*/
 	return rc;
 }
 
